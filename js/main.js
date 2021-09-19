@@ -37,6 +37,16 @@ const app = new Vue({
         },
         goToImage: function(i) {
             this.imageIndex = i;
+        },
+        autoPlay: function() {
+            const t = this;
+            setInterval( function() {
+                ( t.imageIndex >= t.images.length - 1 ) ? 
+                t.imageIndex = 0 : t.imageIndex++;
+            }, 3000);
         }
+    },
+    mounted() {
+        this.autoPlay();
     }
 })
