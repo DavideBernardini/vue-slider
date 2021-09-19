@@ -48,3 +48,6 @@
     opacity: 0.9;
     transform: scale(1.15);
 }
+.fa-circle.active:hover {
+    opacity: 0.9;
+}
