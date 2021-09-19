@@ -47,10 +47,6 @@ const app = new Vue({
         },
         pauseAutoPlay: function() {
             clearInterval(interval);
-            setTimeout(restart, 10000);
-            function restart() {
-                app.autoPlay()
-            }
         }
     },
     mounted() {
