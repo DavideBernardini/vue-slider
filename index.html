@@ -26,7 +26,6 @@
                     <img :src="images[imageIndex].url" :alt="images[imageIndex].alt">
                     <div class="bullets">
                         <i class="fas fa-circle" v-for="(elm, i) in images" :class="isBulletActive(i)" @click="goToImage(i), pauseAutoPlay()"></i>
-                        
                     </div>
                 </div>
                 <div class="c_next" @click="nextImage(), pauseAutoPlay()">
