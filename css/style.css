@@ -1,0 +1,50 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* slider */
+#slider {
+    height: 100vh;
+    display: flex;
+    background-color: floralwhite;
+}
+
+/* carousel */
+.carousel {
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+.images_bullets {
+    text-align: center;
+}
+.images_bullets img {
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.555);
+}
+.bullets {
+    text-align: center;
+    margin-top: 15px;
+}
+.bullets i {
+    margin: 0 8px;
+    font-size: 18px;
+    opacity: 0.4;
+}
+.c_prev i, .c_next i {
+    font-size: 90px;
+    padding: 0 20px;
+    opacity: 0.4;
+}
+.c_prev:hover i, .c_next:hover i, .bullets i:hover {
+    opacity: 0.6;
+}
+.fa-circle.active {
+    color: chocolate;
+    opacity: 0.9;
+    transform: scale(1.15);
+}
