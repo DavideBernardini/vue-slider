@@ -24,6 +24,7 @@ const app = new Vue({
             }
         ],
         imageIndex: 0,
+        interval: 0
     },
     methods: {
         prevImage: function() {
@@ -39,11 +40,17 @@ const app = new Vue({
             this.imageIndex = i;
         },
         autoPlay: function() {
-            const t = this;
-            setInterval( function() {
-                ( t.imageIndex >= t.images.length - 1 ) ? 
-                t.imageIndex = 0 : t.imageIndex++;
+            interval = setInterval( function() {
+                ( app.imageIndex >= app.images.length - 1 ) ? 
+                app.imageIndex = 0 : app.imageIndex++;
             }, 3000);
+        },
+        pauseAutoPlay: function() {
+            clearInterval(interval);
+            setTimeout(restart, 10000);
+            function restart() {
+                app.autoPlay()
+            }
         }
     },
     mounted() {

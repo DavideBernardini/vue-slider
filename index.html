@@ -19,17 +19,17 @@
         
         <div id="slider">
             <div class="carousel">
-                <div class="c_prev" @click="prevImage()">
+                <div class="c_prev" @click="prevImage(), pauseAutoPlay()">
                     <i class="fas fa-angle-left"></i>
                 </div>
                 <div class="images_bullets">
                     <img :src="images[imageIndex].url" :alt="images[imageIndex].alt">
                     <div class="bullets">
-                        <i class="fas fa-circle" v-for="(elm, i) in images" :class="isBulletActive(i)" @click="goToImage(i)"></i>
+                        <i class="fas fa-circle" v-for="(elm, i) in images" :class="isBulletActive(i)" @click="goToImage(i), pauseAutoPlay()"></i>
                         
                     </div>
                 </div>
-                <div class="c_next" @click="nextImage()">
+                <div class="c_next" @click="nextImage(), pauseAutoPlay()">
                     <i class="fas fa-angle-right"></i>
                 </div>
             </div>
