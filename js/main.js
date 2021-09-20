@@ -40,9 +40,9 @@ const app = new Vue({
             this.imageIndex = i;
         },
         startAutoPlay: function() {
-            interval = setInterval( function() {
-                ( app.imageIndex >= app.images.length - 1 ) ? 
-                app.imageIndex = 0 : app.imageIndex++;
+            interval = setInterval( () => {
+                ( this.imageIndex >= this.images.length - 1 ) ? 
+                this.imageIndex = 0 : this.imageIndex++;
             }, 3000);
         },
         stopAutoPlay: function() {
@@ -53,5 +53,15 @@ const app = new Vue({
     },
     mounted() {
         this.startAutoPlay();
+
+        document.addEventListener("keydown",
+        (event) => {
+            if (event.key == "ArrowRight") {
+                this.nextImage();
+            } else if (event.key == "ArrowLeft") {
+                this.prevImage();
+            }
+        }
+        )
     }
 })
